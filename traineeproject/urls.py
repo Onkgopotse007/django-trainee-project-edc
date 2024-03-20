@@ -25,5 +25,5 @@ urlpatterns = [
     path('community_involvement/', include('communityinvolvementquestionnaire.urls')),
     path('education/', include('educationquestionnaire.urls')),
     path('enrollment/', include('enrollmentquestionnaire.urls')),
-    path('admin/', traineeproject_admin.urls),
+    path('trainee_admin/', traineeproject_admin.urls),
 ]

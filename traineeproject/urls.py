@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from traineeproject.admin_site import traineeproject_admin
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('subject_consent/', include('subjectconsentquestionnaire.urls')),
     path('community_involvement/', include('communityinvolvementquestionnaire.urls')),
     path('education/', include('educationquestionnaire.urls')),
     path('enrollment/', include('enrollmentquestionnaire.urls')),
+    path('admin/', traineeproject_admin.urls),
 ]

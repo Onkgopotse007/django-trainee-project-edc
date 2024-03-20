@@ -6,7 +6,6 @@ from traineeproject.choices import *
 
 
 class SubjectEmployment(models.Model):
-    subject_id = models.ForeignKey(EnrollmentChecklist, on_delete=models.CASCADE, verbose_name=f'Subject identifier')
     is_working = models.BooleanField(
         verbose_name=f'Are you currently working?',
         null=False,

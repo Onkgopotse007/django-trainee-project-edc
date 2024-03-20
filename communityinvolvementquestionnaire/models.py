@@ -5,7 +5,6 @@ from traineeproject.choices import *
 
 
 class CommunityInvolvement(models.Model):
-    subject_id = models.ForeignKey(EnrollmentChecklist, on_delete=models.CASCADE, verbose_name=f'Subject identifier')
     involvement_rate = models.CharField(
         verbose_name=f'How active are you in community activities such as burial society, Motshelo, Syndicate, PTA, '
                      f'VDC(Village Development Committee), Mophato and development of the community that surrounds you?',

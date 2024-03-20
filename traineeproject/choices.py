@@ -1,6 +1,9 @@
+from edc_constants.constants import OTHER
+from django.utils.translation import gettext_lazy as _
+
 GENDER_CHOICES = [
-    ('MALE', 'Male'),
-    ('FEMALE', 'Female'),
+    ('M', 'Male'),
+    ('F', 'Female'),
     ('OTHER', 'Other'),
 ]
 
@@ -20,7 +23,8 @@ HOUSE_MATE_CHOICES = [
 ]
 
 EMPLOYMENT_INDUSTRY_CHOICES = [
-    ('OCCASIONAL OR CASUAL EMPLOYMENT (PIECE JOB)', 'Occasional or Casual employment (piece job)'),
+    ('OCCASIONAL OR CASUAL EMPLOYMENT (PIECE JOB)',
+     'Occasional or Casual employment (piece job)'),
     ('SEASONAL EMPLOYMENT', 'Seasonal employment'),
     ('FORMAL WAGE EMPLOYMENT (FULL-TIME)', 'Formal wage employment (full-time)'),
     ('FORMAL WAGE EMPLOYMENT (PART-TIME)', 'Formal wage employment (part-time)'),
@@ -35,7 +39,8 @@ EMPLOYMENT_CHOICES = [
     ('FARMER (OWN LAND)', 'Farmer (own land)'),
     ('FARM WORK EMPLOYERS LAND', 'Farm work on employers land'),
     ('DOMESTIC WORKER', 'Domestic worker'),
-    ('WORK IN BAR/HOTEL/GUEST HOUSE/ENTERTAINMENT VENUE', 'Work in bar/hotel/guest house/entertainment venue'),
+    ('WORK IN BAR/HOTEL/GUEST HOUSE/ENTERTAINMENT VENUE',
+     'Work in bar/hotel/guest house/entertainment venue'),
     ('FISHING', 'Fishing'),
     ('MINING', 'Mining'),
     ('TOURISM/GAME PARKS', 'Tourism/game parks'),
@@ -97,3 +102,21 @@ ADULTS_PROBLEM_SOLVING_CHOICES = [
     ('DON\'T KNOW', 'Don\'t know'),
     ('DON\'T WANT TO ANSWER', 'Don\'t want to answer')
 ]
+
+LANGUAGES = [
+    ('setswana', 'Setswana'),
+    ('english', 'English'),
+]
+
+IDENTITY_TYPE = (
+    ('country_id', 'Country ID number'),
+    ('passport', 'Passport'),
+    ('birth_certificate', 'Birth Certificate'),
+    (OTHER, _('Other')),
+)
+
+YES_NO_BOOLEAN_CHOICES = [
+    (True, 'Yes'),
+    (False, 'No'),
+]
+CONSENT_INVALID = 'consent invalid if no'

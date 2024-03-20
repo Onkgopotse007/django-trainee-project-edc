@@ -20,7 +20,8 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+APP_NAME = 'traineeproject'
+SITE_ID = 1
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -35,7 +36,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-print( 'here 1')
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,9 +48,17 @@ INSTALLED_APPS = [
     'django_crypto_fields.apps.AppConfig',
     'educationquestionnaire',
     'enrollmentquestionnaire',
-    'subjectconsentquestionnaire'
+    'subjectconsentquestionnaire',
+    'edc_device',
+    'edc_protocol',
+    'edc_consent',
+    'edc_visit_schedule',
+    'edc_model_admin',
+    'edc_identifier',
+    'traineeproject',
+    'edc_base',
+    'edc_registration'
 ]
-print('here 2')
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -88,7 +96,7 @@ WSGI_APPLICATION = 'traineeproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'trainee_db',
+        'NAME': 'edc_trainee_db',
         'USER': 'avnadmin',
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
@@ -143,6 +151,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ETC_DIR = '/etc/'
 
-AUTO_CREATE_KEYS = True
+AUTO_CREATE_KEYS = False
 
 

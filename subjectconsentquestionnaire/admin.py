@@ -1,6 +1,7 @@
 from collections import OrderedDict
 
 from django.contrib import admin
+from django.contrib.admin import site
 from django.urls import reverse, NoReverseMatch
 from django_revision.modeladmin_mixin import ModelAdminRevisionMixin
 from edc_consent.actions import flag_as_verified_against_paper, \
@@ -39,7 +40,8 @@ class ModelAdminMixin(ModelAdminNextUrlRedirectMixin, ModelAdminFormAutoNumberMi
                     f'{e}. Got url_name={url_name}, kwargs={options}.')
         return redirect_url
 
-@admin.register(SubjectConsent, site=traineeproject_admin)
+
+@admin.register(SubjectConsent, site=site)
 class SubjectConsentAdmin(ModelAdminBasicMixin, ModelAdminMixin,
                           SimpleHistoryAdmin,
                           admin.ModelAdmin):
@@ -98,9 +100,5 @@ class SubjectConsentAdmin(ModelAdminBasicMixin, ModelAdminMixin,
     search_fields = ('subject_identifier', 'dob')
     readonly_fields = ('subject_identifier',)
 
-
     def get_readonly_fields(self, request, obj=None):
         return super().get_readonly_fields(request, obj=obj) + audit_fields
-
-
-
